@@ -33,27 +33,21 @@ def bank_statement():
             total_months += 1
             total_profit += profit
         avg_change = round(sum(changes)/ len(changes))
-        print('Financial Analysis')
-        print('----------------------')
-        print(f'Total Months: {total_months}')
-        print(f'Total: ${total_profit}')
-        print(f'Average Change: ${avg_change}')
-        print(f'Greatest Increase in Profits: {increase[0]} (${increase[1]})')
-        print(f'Greatest Decrease in Profits: {decrease[0]} (${decrease[1]})')
-        return('Financial Analysis')
-        return('----------------------')
-        return(f'Total Months: {total_months}')
-        return(f'Total: ${total_profit}')
-        return(f'Average Change: ${avg_change}')
-        return(f'Greatest Increase in Profits: {increase[0]} (${increase[1]})')
-        return(f'Greatest Decrease in Profits: {decrease[0]} (${decrease[1]})')
-
-
+        return \
+        f'''Financial Analysis'
+----------------------
+Total Months: {total_months}
+Total: ${total_profit}
+Average Change: ${avg_change}
+Greatest Increase in Profits: {increase[0]} (${increase[1]})
+Greatest Decrease in Profits: {decrease[0]} (${decrease[1]})
+'''
 # In[14]:
-
-
 output = bank_statement()
-file = open("pybank.txt")
-file.write(output)
-file.close()
+print(output)
+with open("pybank.txt", "w") as file:
+    file.write(output)
+
+
+
 
